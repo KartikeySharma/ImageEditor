@@ -3,15 +3,19 @@ package com.example.imageeditor
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.ContextMenu
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -22,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import java.io.File
 import java.io.IOException
+import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
@@ -163,7 +168,6 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == 1 && resultCode == RESULT_OK) {
             try {
                 bitmap = BitmapFactory.decodeFile(currentPhotoPath)
-                println(bitmap)
                 val contentValues = ContentValues()
                 contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, "$imageFileName.jpg")
                 contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")

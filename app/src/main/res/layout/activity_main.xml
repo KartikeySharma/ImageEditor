@@ -21,11 +21,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="106dp"
-        android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,27 +32,23 @@
 
         <Button
             android:id="@+id/selfieButton"
+            android:drawableLeft="@drawable/ic_baseline_camera_alt_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:onClick="clickSelfie"
             android:text="Selfie" />
 
         <Button
             android:id="@+id/galleryButton"
+            android:drawableLeft="@drawable/ic_baseline_image_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
             android:onClick="clickGallery"
             android:text="Gallery" />
+
     </LinearLayout>
 
     <TextView
