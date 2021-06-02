@@ -1,6 +1,7 @@
 package com.example.imageeditor
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -27,10 +28,11 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    var imageView: ImageView? = null
-    var cameraImage: File? = null
-    var textView: TextView? = null
-    var galleryButton: Button? = null
+
+    private var imageView: ImageView? = null
+    private var textView: TextView? = null
+    private var galleryButton: Button? = null
+
     @RequiresApi(api = Build.VERSION_CODES.Q)
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -39,13 +41,14 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 1) {
-            if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 photo
             }
         }
     }
 
     var currentPhotoPath: String? = null
+    @SuppressLint("SimpleDateFormat")
     @Throws(IOException::class)
     private fun createImageFile(): File {
         // Create an image file name
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         imageFileName = "JPEG_" + timeStamp + "_"
         val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
         val image = File.createTempFile(
-            imageFileName,  /* prefix */
+            imageFileName!!,  /* prefix */
             ".jpg",  /* suffix */
             storageDir /* directory */
         )
@@ -101,32 +104,39 @@ class MainActivity : AppCompatActivity() {
         EditImageActivity.rotateThenCropBitmap = null
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         imageView = findViewById(R.id.imageView)
         textView = findViewById(R.id.textView)
         galleryButton = findViewById(R.id.galleryButton)
-        if (EditImageActivity.cropThenRotateBitmap != null) {
-            imageView?.setImageBitmap(EditImageActivity.cropThenRotateBitmap)
-            textView?.setText("Edited Image")
-            makeBitmapNull()
-        } else if (EditImageActivity.rotateThenCropBitmap != null) {
-            imageView?.setImageBitmap(EditImageActivity.rotateThenCropBitmap)
-            textView?.setText("Edited Image")
-            makeBitmapNull()
-        } else if (EditImageActivity.rotateBitmap != null) {
-            imageView?.setImageBitmap(EditImageActivity.rotateBitmap)
-            textView?.setText("Edited Image")
-            makeBitmapNull()
-        } else if (EditImageActivity.croppedBitmap != null) {
-            imageView?.setImageBitmap(EditImageActivity.croppedBitmap)
-            textView?.setText("Edited Image")
-            makeBitmapNull()
-        } else if (bitmap != null) {
-            imageView?.setImageBitmap(bitmap)
-            textView?.setText("Edited Image")
-            makeBitmapNull()
+        when {
+            EditImageActivity.cropThenRotateBitmap != null -> {
+                imageView?.setImageBitmap(EditImageActivity.cropThenRotateBitmap)
+                textView?.text= getString(R.string.editedimage)
+                makeBitmapNull()
+            }
+            EditImageActivity.rotateThenCropBitmap != null -> {
+                imageView?.setImageBitmap(EditImageActivity.rotateThenCropBitmap)
+                textView?.text= getString(R.string.editedimage)
+                makeBitmapNull()
+            }
+            EditImageActivity.rotateBitmap != null -> {
+                imageView?.setImageBitmap(EditImageActivity.rotateBitmap)
+                textView?.text= getString(R.string.editedimage)
+                makeBitmapNull()
+            }
+            EditImageActivity.croppedBitmap != null -> {
+                imageView?.setImageBitmap(EditImageActivity.croppedBitmap)
+                textView?.text= getString(R.string.editedimage)
+                makeBitmapNull()
+            }
+            bitmap != null -> {
+                imageView?.setImageBitmap(bitmap)
+                textView?.setText("Edited Image")
+                makeBitmapNull()
+            }
         }
     }
 

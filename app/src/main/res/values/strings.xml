@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ImageEditor</string>
+    <string name="editedimage">Edited Image</string>
 </resources>
