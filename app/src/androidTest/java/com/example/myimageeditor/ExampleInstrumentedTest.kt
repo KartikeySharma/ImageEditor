@@ -1,4 +1,4 @@
-package com.example.imageeditor
+package com.example.myimageeditor
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        Assert.assertEquals("com.example.imageeditor", appContext.packageName)
+        Assert.assertEquals("com.example.myimageeditor", appContext.packageName)
     }
 }

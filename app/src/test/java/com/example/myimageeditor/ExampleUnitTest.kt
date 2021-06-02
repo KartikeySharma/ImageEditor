@@ -1,4 +1,4 @@
-package com.example.imageeditor
+package com.example.myimageeditor
 
 import org.junit.Assert
 import org.junit.Test
