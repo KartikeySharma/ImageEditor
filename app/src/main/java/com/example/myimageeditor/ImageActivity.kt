@@ -26,7 +26,7 @@ import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class ImageActivity : AppCompatActivity() {
 
     private var imageView: ImageView? = null
     private var textView: TextView? = null

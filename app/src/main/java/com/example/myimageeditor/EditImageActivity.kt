@@ -67,19 +67,19 @@ class EditImageActivity : AppCompatActivity() {
                 true
             )
         } else {
-            rotateBitmap = MainActivity.bitmap?.let {
+            rotateBitmap = ImageActivity.bitmap?.let {
                 Bitmap.createBitmap(
                     it,
                     0,
                     0,
-                    MainActivity.bitmap!!.width,
-                    MainActivity.bitmap!!.height,
+                    ImageActivity.bitmap!!.width,
+                    ImageActivity.bitmap!!.height,
                     matrix,
                     true
                 )
             }
         }
-        imageView!!.setImageBitmap(MainActivity.bitmap)
+        imageView!!.setImageBitmap(ImageActivity.bitmap)
         imageView!!.startAnimation(rotateAnimation)
         makeBitmapNull()
     }
@@ -92,15 +92,15 @@ class EditImageActivity : AppCompatActivity() {
             val path = MediaStore.Images.Media.insertImage(
                 contentResolver,
                 rotateBitmap,
-                MainActivity.imageFileName + ".jpg",
+                ImageActivity.imageFileName + ".jpg",
                 null
             )
             //            System.out.println(Uri.parse(path));
-            MainActivity.uri = Uri.parse(path)
-            CropImage.activity(MainActivity.uri)
+            ImageActivity.uri = Uri.parse(path)
+            CropImage.activity(ImageActivity.uri)
                 .start(this)
-        } else if (MainActivity.uri1 != null) {
-            CropImage.activity(MainActivity.uri1)
+        } else if (ImageActivity.uri1 != null) {
+            CropImage.activity(ImageActivity.uri1)
                 .start(this)
         }
     }
@@ -129,7 +129,7 @@ class EditImageActivity : AppCompatActivity() {
     @Throws(IOException::class)
     fun save(view: View?) {
         val contentValues = ContentValues()
-        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, MainActivity.imageFileName + ".jpg")
+        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, ImageActivity.imageFileName + ".jpg")
         contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
         contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
         val resolver = contentResolver
@@ -167,7 +167,7 @@ class EditImageActivity : AppCompatActivity() {
                     throw IOException("Failed to compress bitmap")
                 }
             } else {
-                if (!MainActivity.bitmap!!.compress(
+                if (!ImageActivity.bitmap!!.compress(
                         Bitmap.CompressFormat.JPEG,
                         100,
                         imageOutStream
@@ -180,7 +180,7 @@ class EditImageActivity : AppCompatActivity() {
         } finally {
             if (imageOutStream != null) {
                 imageOutStream.close()
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ImageActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 finish()
                 startActivity(intent)
@@ -219,11 +219,11 @@ class EditImageActivity : AppCompatActivity() {
             )
         } else {
             rotateBitmap = Bitmap.createBitmap(
-                MainActivity.bitmap!!,
+                ImageActivity.bitmap!!,
                 0,
                 0,
-                MainActivity.bitmap!!.width,
-                MainActivity.bitmap!!.height,
+                ImageActivity.bitmap!!.width,
+                ImageActivity.bitmap!!.height,
                 matrix,
                 true
             )
@@ -245,7 +245,7 @@ class EditImageActivity : AppCompatActivity() {
             1
         )
         try {
-            imageView?.setImageBitmap(MainActivity.bitmap)
+            imageView?.setImageBitmap(ImageActivity.bitmap)
         } catch (e: Exception) {
             println(e.message)
         }
