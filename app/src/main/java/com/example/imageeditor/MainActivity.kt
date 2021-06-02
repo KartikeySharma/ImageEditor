@@ -176,13 +176,13 @@ class MainActivity : AppCompatActivity() {
                 var imageOutStream: OutputStream? = null
                 try {
                     if (uri == null) {
-                        throw IOException("Failed to insert MediaStore row")
+                        throw IOException("Failed to insert into MediaStore row")
                     }
                     imageOutStream = resolver.openOutputStream(uri!!)
                     if (bitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, imageOutStream)) {
                         throw IOException("Failed to compress bitmap")
                     }
-                    Toast.makeText(this, "Image Saved", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Image Saved to Gallery", Toast.LENGTH_SHORT).show()
                 } finally {
                     imageOutStream?.close()
                     val intent = Intent(this, EditImageActivity::class.java)
