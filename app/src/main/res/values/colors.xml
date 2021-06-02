@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="orange_primary">#fb8c00</color>
+    <color name="orange_secondary">#c25e00</color>
+    <color name="orangedark_primary">#ef6c00</color>
+    <color name="orangedark_secondary">#b53d00</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

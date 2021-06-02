@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ImageEditor</string>
     <string name="editedimage">Edited Image</string>
+    <string name="default_image">Default Image</string>
 </resources>
