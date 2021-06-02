@@ -13,7 +13,7 @@
         android:layout_marginTop="126dp"
         android:contentDescription="@string/default_image"
         android:scaleType="fitCenter"
-        android:src="@drawable/fotu"
+        android:src="@drawable/image_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
