@@ -232,6 +232,7 @@ class EditImageActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_image)
         imageView = findViewById(R.id.editImageView)

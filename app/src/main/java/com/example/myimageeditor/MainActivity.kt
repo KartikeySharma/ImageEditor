@@ -106,6 +106,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         imageView = findViewById(R.id.imageView)
