@@ -19,7 +19,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.example.imageeditor.EditImageActivity
 import com.theartofdev.edmodo.cropper.CropImage
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -31,7 +30,6 @@ class EditImageActivity : AppCompatActivity() {
     var saveButton: Button? = null
     var cropButton: Button? = null
     var mCurrRotation = 0
-    val PIC_CROP = 1
     var isRotate = false
     var fromRotation = 0f
     var toRotation = 0f
@@ -121,7 +119,7 @@ class EditImageActivity : AppCompatActivity() {
                     rotateThenCropBitmap = croppedBitmap
                 }
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                val error = result.error
+                println(result.error)
             }
         }
     }
@@ -177,7 +175,7 @@ class EditImageActivity : AppCompatActivity() {
                     throw IOException("Failed to compress bitmap")
                 }
             }
-            Toast.makeText(this, "Imave Saved", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Image Saved in Gallery", Toast.LENGTH_SHORT).show()
         } finally {
             if (imageOutStream != null) {
                 imageOutStream.close()
@@ -261,7 +259,5 @@ class EditImageActivity : AppCompatActivity() {
         @JvmField
         var croppedBitmap: Bitmap? = null
         var resultUri: Uri? = null
-        var unChangedBitmap: Bitmap? = null
-        var bitmapBasic: Bitmap? = null
     }
 }

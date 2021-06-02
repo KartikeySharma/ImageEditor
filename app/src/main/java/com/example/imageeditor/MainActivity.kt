@@ -20,7 +20,6 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import com.example.imageeditor.EditImageActivity
 import java.io.File
 import java.io.IOException
 import java.io.OutputStream
@@ -32,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private var imageView: ImageView? = null
     private var textView: TextView? = null
     private var galleryButton: Button? = null
+    private var currentPhotoPath: String? = null
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
     override fun onRequestPermissionsResult(
@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    var currentPhotoPath: String? = null
     @SuppressLint("SimpleDateFormat")
     @Throws(IOException::class)
     private fun createImageFile(): File {
@@ -71,7 +70,8 @@ class MainActivity : AppCompatActivity() {
 // Create the File where the photo should go
     // Ensure that there's a camera activity to handle the intent
     private val photo: Unit
-        private get() {
+        @SuppressLint("QueryPermissionsNeeded")
+        get() {
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             // Ensure that there's a camera activity to handle the intent
             if (takePictureIntent.resolveActivity(packageManager) != null) {
@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-    fun makeBitmapNull() {
+    private fun makeBitmapNull() {
         EditImageActivity.croppedBitmap = null
         EditImageActivity.rotateBitmap = null
         EditImageActivity.cropThenRotateBitmap = null
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             }
             bitmap != null -> {
                 imageView?.setImageBitmap(bitmap)
-                textView?.setText("Edited Image")
+                textView?.text = "Edited Image"
                 makeBitmapNull()
             }
         }
@@ -165,7 +165,7 @@ class MainActivity : AppCompatActivity() {
                 bitmap = BitmapFactory.decodeFile(currentPhotoPath)
                 println(bitmap)
                 val contentValues = ContentValues()
-                contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName + ".jpg")
+                contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, "$imageFileName.jpg")
                 contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
                 contentValues.put(
                     MediaStore.MediaColumns.RELATIVE_PATH,
