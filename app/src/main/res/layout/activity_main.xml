@@ -32,20 +32,20 @@
 
         <Button
             android:id="@+id/selfieButton"
-            android:drawableLeft="@drawable/ic_baseline_camera_alt_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/ic_baseline_camera_alt_24"
             android:onClick="clickSelfie"
             android:text="Selfie" />
 
         <Button
             android:id="@+id/galleryButton"
-            android:drawableLeft="@drawable/ic_baseline_image_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:drawableLeft="@drawable/ic_baseline_image_24"
             android:onClick="clickGallery"
             android:text="Gallery" />
 

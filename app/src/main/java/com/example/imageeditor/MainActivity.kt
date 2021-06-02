@@ -119,22 +119,22 @@ class MainActivity : AppCompatActivity() {
         when {
             EditImageActivity.cropThenRotateBitmap != null -> {
                 imageView?.setImageBitmap(EditImageActivity.cropThenRotateBitmap)
-                textView?.text= getString(R.string.editedimage)
+                textView?.text = getString(R.string.editedimage)
                 makeBitmapNull()
             }
             EditImageActivity.rotateThenCropBitmap != null -> {
                 imageView?.setImageBitmap(EditImageActivity.rotateThenCropBitmap)
-                textView?.text= getString(R.string.editedimage)
+                textView?.text = getString(R.string.editedimage)
                 makeBitmapNull()
             }
             EditImageActivity.rotateBitmap != null -> {
                 imageView?.setImageBitmap(EditImageActivity.rotateBitmap)
-                textView?.text= getString(R.string.editedimage)
+                textView?.text = getString(R.string.editedimage)
                 makeBitmapNull()
             }
             EditImageActivity.croppedBitmap != null -> {
                 imageView?.setImageBitmap(EditImageActivity.croppedBitmap)
-                textView?.text= getString(R.string.editedimage)
+                textView?.text = getString(R.string.editedimage)
                 makeBitmapNull()
             }
             bitmap != null -> {

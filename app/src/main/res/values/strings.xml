@@ -2,4 +2,8 @@
     <string name="app_name">ImageEditor</string>
     <string name="editedimage">Edited Image</string>
     <string name="default_image">Default Image</string>
+    <string name="crop">Crop</string>
+    <string name="rotate">Rotate</string>
+    <string name="undo">Undo</string>
+    <string name="save">Save</string>
 </resources>

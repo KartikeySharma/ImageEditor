@@ -25,15 +25,16 @@ import java.io.IOException
 import java.io.OutputStream
 
 class EditImageActivity : AppCompatActivity() {
-    var imageView: ImageView? = null
-    var rotateButton: Button? = null
-    var saveButton: Button? = null
-    var cropButton: Button? = null
-    var mCurrRotation = 0
-    var isRotate = false
-    var fromRotation = 0f
-    var toRotation = 0f
-    fun makeBitmapNull() {
+    private var imageView: ImageView? = null
+    private var rotateButton: Button? = null
+    private var saveButton: Button? = null
+    private var cropButton: Button? = null
+    private var mCurrRotation = 0
+    private var isRotate = false
+    private var fromRotation = 0f
+    private var toRotation = 0f
+
+    private fun makeBitmapNull() {
         mCurrRotation = 0
         toRotation = 0f
         fromRotation = 0f
@@ -252,10 +253,13 @@ class EditImageActivity : AppCompatActivity() {
     companion object {
         @JvmField
         var rotateBitmap: Bitmap? = null
+
         @JvmField
         var cropThenRotateBitmap: Bitmap? = null
+
         @JvmField
         var rotateThenCropBitmap: Bitmap? = null
+
         @JvmField
         var croppedBitmap: Bitmap? = null
         var resultUri: Uri? = null
