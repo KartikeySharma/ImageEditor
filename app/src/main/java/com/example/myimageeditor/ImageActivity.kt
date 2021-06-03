@@ -108,7 +108,7 @@ class ImageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_image)
         imageView = findViewById(R.id.imageView)
         textView = findViewById(R.id.textView)
         galleryButton = findViewById(R.id.galleryButton)

@@ -33,6 +33,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_border_for_view"
             android:drawableLeft="@drawable/ic_baseline_undo_24"
             android:onClick="undo"
             android:text="@string/undo"
@@ -40,6 +41,7 @@
 
         <Button
             android:id="@+id/rotateButton"
+            android:background="@drawable/rounded_border_for_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="7dp"
@@ -51,6 +53,7 @@
 
         <Button
             android:id="@+id/cropButton"
+            android:background="@drawable/rounded_border_for_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="7dp"
@@ -73,6 +76,7 @@
 
         <Button
             android:id="@+id/saveButton"
+            android:background="@drawable/rounded_border_for_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_baseline_save_24"

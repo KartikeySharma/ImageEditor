@@ -6,4 +6,6 @@
     <string name="rotate">Rotate</string>
     <string name="undo">Undo</string>
     <string name="save">Save</string>
+    <string name="gallery">Gallery</string>
+    <string name="selfie">Selfie</string>
 </resources>
