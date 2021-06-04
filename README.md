@@ -38,7 +38,7 @@ The app is built in Kotlin and uses Camera API from ArthurHub and also uses Bitm
 </p>
 
 <p align="left">
-  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/7.jpegg">
+  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/7.jpeg">
 </p>
 
 
