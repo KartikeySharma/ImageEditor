@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="300" src="https://github.com/KartikeySharma/FoodRunner-App/blob/master/app/src/main/res/drawable/food_runner_logo.png">
+  <img width="300" height="300" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/logo.png">
 </p>
 
 
@@ -26,19 +26,19 @@ The app is built in Kotlin and uses Camera API from ArthurHub and also uses Bitm
 ## Some screenshots of the app
 
 <p align="left">
-  <img width="300" height="600" src="https://github.com/KartikeySharma/FoodRunner-App/blob/master/Screenshots/2.Login_Page.jpeg">
+  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/1.jpeg">
 </p>
 
 <p align="left">
-  <img width="300" height="600" src="https://github.com/KartikeySharma/FoodRunner-App/blob/master/Screenshots/6.Navigation_Drawer.jpeg">
+  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/2.jpeg">
 </p>
 
 <p align="left">
-  <img width="300" height="600" src="https://github.com/KartikeySharma/FoodRunner-App/blob/master/Screenshots/7.All_Restaurants_Menu.jpeg">
+  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/3.jpeg">
 </p>
 
 <p align="left">
-  <img width="300" height="600" src="https://github.com/KartikeySharma/FoodRunner-App/blob/master/Screenshots/21.Order_Placed_Sucessfully.jpeg">
+  <img width="300" height="600" src="https://github.com/KartikeySharma/ImageEditor/blob/master/Screenshots/7.jpegg">
 </p>
 
 
