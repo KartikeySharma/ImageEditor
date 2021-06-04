@@ -129,7 +129,10 @@ class EditImageActivity : AppCompatActivity() {
     @Throws(IOException::class)
     fun save(view: View?) {
         val contentValues = ContentValues()
-        contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, ImageActivity.imageFileName + ".jpg")
+        contentValues.put(
+            MediaStore.MediaColumns.DISPLAY_NAME,
+            ImageActivity.imageFileName + ".jpg"
+        )
         contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
         contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
         val resolver = contentResolver
